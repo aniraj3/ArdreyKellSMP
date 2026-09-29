@@ -94,7 +94,7 @@ footer{margin-top:4rem;color:var(--muted);font-size:.9rem;border-top:2px solid v
 <script>
   // Paste your Google Form "Embed HTML" src link here (the URL inside src="..."),
   // e.g. "https://docs.google.com/forms/d/e/XXXX/viewform?embedded=true"
-  var FORM_URL = "<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeIUVNVG16TT9WZz8skC-8qn5sQNrV-Q11ZwH_ORO0yRMiPAQ/viewform?embedded=true" width="640" height="541" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>";
+  var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeIUVNVG16TT9WZz8skC-8qn5sQNrV-Q11ZwH_ORO0yRMiPAQ/viewform?embedded=true";
 
   if (FORM_URL) {
     var wrap = document.getElementById("form-wrap");
@@ -104,6 +104,10 @@ footer{margin-top:4rem;color:var(--muted);font-size:.9rem;border-top:2px solid v
     f.title = "Aternos access request form";
     f.loading = "lazy";
     wrap.appendChild(f);
+    var p = document.createElement("p");
+    p.style.cssText = "margin:.75rem 1rem;font-size:.95rem";
+    p.innerHTML = 'Form not loading? <a href="' + FORM_URL.replace("?embedded=true","") + '" target="_blank" rel="noopener">Open it in a new tab</a>.';
+    wrap.appendChild(p);
   }
 </script>
 </body>
