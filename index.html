@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ardrey Kell SMP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0612; --panel:#160c22; --line:#3a1f5c; --text:#ece4f7; --muted:#a898c0;
+  --purple:#9b4dff; --purple-hi:#c39bff; --warn:#ffb84d; --warn-bg:#2a1a08;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root:not([data-theme="light"]){color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.05rem/1.65 "DM Sans",system-ui,sans-serif;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;background-position:-1px -1px}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(12,6,18,.55),var(--bg) 75%);pointer-events:none;z-index:-1}
+main{max-width:760px;margin:0 auto;padding:0 1.25rem 4rem}
+h1,h2{font-family:"Silkscreen","DM Sans",monospace;font-weight:700;line-height:1.1;margin:0}
+.hero{padding:5rem 0 3rem}
+h1{font-size:clamp(2.6rem,10vw,4.6rem);color:var(--purple-hi);text-shadow:4px 4px 0 var(--purple),8px 8px 0 #000}
+.hero p{color:var(--muted);max-width:34rem;margin:1.75rem 0 2rem}
+.btn{display:inline-block;background:var(--purple);color:#fff;font:700 1rem "DM Sans",sans-serif;text-decoration:none;
+  padding:.9rem 1.5rem;border:2px solid var(--purple-hi);box-shadow:5px 5px 0 #000;transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 #000}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--purple-hi);outline-offset:3px}
+section{margin-top:3rem}
+h2{font-size:1.5rem;color:var(--purple-hi);margin-bottom:1rem}
+.notice{background:var(--panel);border:2px solid var(--line);border-left:6px solid var(--purple);padding:1.1rem 1.25rem;margin-bottom:1rem}
+.notice.warn{background:var(--warn-bg);border-color:#5c3b0f;border-left-color:var(--warn)}
+.notice strong{display:block;font-size:1.1rem;margin-bottom:.25rem}
+.notice p{margin:0;color:var(--muted)}
+.notice.warn p{color:#e9d3b0}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:0}
+ol.steps li{counter-increment:s;position:relative;padding:0 0 1.25rem 3.25rem}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:2.25rem;height:2.25rem;display:grid;place-items:center;
+  background:var(--purple);color:#fff;font:700 1rem "Silkscreen",monospace;border:2px solid var(--purple-hi)}
+ol.steps li::after{content:"";position:absolute;left:1.05rem;top:2.4rem;bottom:.15rem;width:2px;background:var(--line)}
+ol.steps li:last-child::after{display:none}
+ol.steps b{display:block}
+ol.steps span{color:var(--muted)}
+a{color:var(--purple-hi)}
+.form-wrap{background:var(--panel);border:2px solid var(--line);margin-top:1.5rem}
+.form-wrap iframe{display:block;width:100%;height:760px;border:0;background:#fff}
+.placeholder{padding:2.5rem 1.5rem;text-align:center;color:var(--muted)}
+.placeholder b{display:block;color:var(--text);margin-bottom:.4rem}
+footer{margin-top:4rem;color:var(--muted);font-size:.9rem;border-top:2px solid var(--line);padding-top:1.25rem}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <h1>Ardrey Kell SMP</h1>
+    <p>The Ardrey Kell school Minecraft server. Play right in your browser, no download needed.</p>
+    <a class="btn" href="https://eagler-jdw0.onrender.com/game.html" target="_blank" rel="noopener">Play now</a>
+  </header>
+
+  <section aria-labelledby="before">
+    <h2 id="before">Before you join</h2>
+    <div class="notice">
+      <strong>The game may take a minute to load</strong>
+      <p>If nobody has played in a while, the site goes to sleep. Give it up to a minute after you click Play, then refresh if the page looks blank.</p>
+    </div>
+    <div class="notice warn">
+      <strong>Use one username and remember your password</strong>
+      <p>Pick one username and stick with it. Write down your password. If you forget either one, your progress is lost and can't be recovered.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="access">
+    <h2 id="access">Get server access</h2>
+    <p>The server runs on Aternos, which keeps it turned off until someone starts it. To turn it on, you need your own Aternos account and access to the server.</p>
+    <ol class="steps">
+      <li><b>Create an Aternos account</b><span>Sign up for free at <a href="https://aternos.org" target="_blank" rel="noopener">aternos.org</a>. Remember your Aternos username.</span></li>
+      <li><b>Request access below</b><span>Fill out the form with your Aternos username and your Minecraft IGN (in-game name) so the server owner can add you.</span></li>
+      <li><b>Start the server</b><span>Once you have access, log in to Aternos, open the server, and press Start. Wait until it says Online.</span></li>
+      <li><b>Join the game</b><span>Use the Play now button at the top of this page.</span></li>
+    </ol>
+
+    <div class="form-wrap" id="form-wrap">
+      <div class="placeholder"><b>The access request form goes here</b>Add your Google Form link in the FORM_URL line of this page's code.</div>
+    </div>
+  </section>
+
+  <footer>Ardrey Kell SMP, a student-run server.</footer>
+</main>
+<script>
+  // Paste your Google Form "Embed HTML" src link here (the URL inside src="..."),
+  // e.g. "https://docs.google.com/forms/d/e/XXXX/viewform?embedded=true"
+  var FORM_URL = "<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeIUVNVG16TT9WZz8skC-8qn5sQNrV-Q11ZwH_ORO0yRMiPAQ/viewform?embedded=true" width="640" height="541" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>";
+
+  if (FORM_URL) {
+    var wrap = document.getElementById("form-wrap");
+    wrap.innerHTML = "";
+    var f = document.createElement("iframe");
+    f.src = FORM_URL;
+    f.title = "Aternos access request form";
+    f.loading = "lazy";
+    wrap.appendChild(f);
+  }
+</script>
+</body>
+</html>
